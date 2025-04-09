@@ -7,4 +7,10 @@ public class TodoItem
     //Eigenschaft ist public -> Kann von außen aufgerufen werden
     public string Description { get; set; }
     public int Prio { get; set; }
+
+//Instanz-Methode => myTodo.ToString();
+    public override string ToString()
+    {
+        return $"{Description} - Prio: {Prio}";
+    }
 }
