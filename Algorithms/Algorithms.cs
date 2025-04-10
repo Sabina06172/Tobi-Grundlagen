@@ -62,6 +62,23 @@ public class Algorithms //Klasse
     }
 
 
+// int[] unsortedArray = [3, 7, 1, 9, 4, 2];
+// public static int[] InsertionSort(int[] unsortedArray)
+// {
+//     //toDo 
+//     for (int i = 0; i < unsortedArray.Length; i++)
+//     {
+//         int sortedArray = unsortedArray[i];
+//         int j = i -1;
+//         while(j >= 0 && unsortedArray[j] > sortedArray)
+//         {
+//             unsortedArray[j +1] = unsortedArray[j];
+//             j--;
+//         }
+//         unsortedArray[j +1] = sortedArray;
+//     }
+//     return unsortedArray;
+
 
     //Linear Search: => O(n)
        [Benchmark]
@@ -70,6 +87,7 @@ public class Algorithms //Klasse
         FindCardLocationLinearSearch(cards, query: 40_942_069); //40_942_068
     }
     public static int FindCardLocationLinearSearch(int[] cards, int query)
+
     {
         /* 
      Definiere Variable "index" und initialisiere mit Wert 0
@@ -87,4 +105,29 @@ public class Algorithms //Klasse
         }
         return -1;
     }
+
+
+// int[] unsortedArray = [3, 7, 1, 9, 4, 2];
+// int[] sortedArray = [];
+public static int[] InsertionSort(int[] unsortedArray)
+{
+    //toDo 
+    // for (int i = 0; i < unsortedArray.Length; i++)
+    int i = 1;
+    // int sortedArray = unsortedArray[i];
+    while(i < unsortedArray.Length)
+    {
+        int j = i -1;
+        int sortedArray = unsortedArray[i];
+        while(j >= 0 && sortedArray < unsortedArray[j]) //Wird nach links verschoben
+        {
+            unsortedArray[j +1] = unsortedArray[j];
+            j--;
+        }
+        unsortedArray[j +1] = sortedArray;
+        i++;
+    }
+    return unsortedArray;
 }
+}
+
